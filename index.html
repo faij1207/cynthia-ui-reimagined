@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crazy . Project Designer</title>
+    <link rel="stylesheet" href="loco.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style2.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="miniCircle"></div>
     <div id="main">
       <!-- ------------------------------------------------------------------------------------------------------------------- -->
       <div id="hero">
@@ -19,19 +22,33 @@
           <h4>MENU+</h4>
         </div>
         <div id="heading">
-          <h1>Product</h1>
+          <div class="bounding">
+            <h1 class="boundingelem">Product</h1>
+          </div>
           <div class="blocktext">
-            <h1 id="secondh1">Designer</h1>
-            <h5>Based in toronto</h5>
+            <div class="bounding">
+              <h1 class="boundingelem" id="secondh1">Designer</h1>
+            </div>
+            <div class="bounding">
+              <h5 class="boundingelem">Based in toronto</h5>
+            </div>
           </div>
         </div>
         <div id="purpose">
-          <h5>Available for Full Time & Freelance</h5>
-          <h5>work from Sep ‘24</h5>
+          <div class="bounding">
+            <h5 class="boundingelem">Available for Full Time & Freelance</h5>
+          </div>
+          <div class="bounding">
+            <h5 class="boundingelem">work from Sep ‘24</h5>
+          </div>
         </div>
         <div id="hero-footer">
-          <a href="#">previously worked at yml <i class="ri-arrow-right-up-line"></i></a>
-          <a href="#">prototype ambassador <i class="ri-arrow-right-up-line"></i></a>
+          <a href="#"
+            >previously worked at yml <i class="ri-arrow-right-up-line"></i
+          ></a>
+          <a href="#"
+            >prototype ambassador <i class="ri-arrow-right-up-line"></i
+          ></a>
           <div id="iconset">
             <div class="circle"><i class="ri-arrow-down-line"></i></div>
             <div class="circle"><i class="ri-arrow-down-line"></i></div>
@@ -41,17 +58,17 @@
       <!-- -------------------------------------------------------------------------------------------------------------------- -->
       <div id="second">
         <div class="element">
-          <img src="./plug.png" alt="">
+          <img src="./plug.png" alt="" />
           <h1>the plug</h1>
           <h5>2023</h5>
         </div>
         <div class="element">
-          <img src="./ixperience.png" alt="">
+          <img src="./ixperience.png" alt="" />
           <h1>ixperience</h1>
           <h5>2022</h5>
         </div>
         <div class="element elemlast">
-          <img src="./hudu.png" alt="">
+          <img src="./hudu.png" alt="" />
           <h1>hudu</h1>
           <h5>2022</h5>
         </div>
@@ -75,12 +92,12 @@
         </div>
       </div>
       <!-- -------------------------------------------------------------------------------------------------------------------- -->
-       <div id="subscribe">
+      <div id="subscribe">
         <h5>(forgot to mention)</h5>
         <h3>subscribe to my youtube <i class="ri-arrow-right-up-line"></i></h3>
-       </div>
+      </div>
       <!-- -------------------------------------------------------------------------------------------------------------------- -->
-       <div id="footer">
+      <div id="footer">
         <div id="footerleft">
           <h5>2024 &copy;</h5>
           <h5>12:00 AM EST</h5>
@@ -91,7 +108,15 @@
           <a href="#">dribble</a>
           <a href="#">linkedin</a>
         </div>
-       </div>
+      </div>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

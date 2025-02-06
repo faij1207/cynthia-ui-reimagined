@@ -1,0 +1,11 @@
+/* here i put only animative css */
+
+.bounding{
+    width: fit-content;
+    overflow: hidden;
+}
+
+.bounding .boundingelem{
+    transform: translateY(100%);
+    
+}
