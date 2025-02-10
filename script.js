@@ -8,31 +8,30 @@ const scroll = new LocomotiveScroll({
 
 //circle skewness on mouse move
 function circleSkewness() {
-    //define default scale value
-    var xscale = 1;
-    var yscale = 1;
-    
-    var xprev = 0;
-    var yprev = 0;
+  //define default scale value
+  var xscale = 1;
+  var yscale = 1;
 
-    window.addEventListener("mousemove", function (dets) {
+  var xprev = 0;
+  var yprev = 0;
 
-        this.clearTimeout(timeout);
-     
-        xscale = gsap.utils.clamp(.8,1.2,dets.clientX - xprev);
-        yscale = gsap.utils.clamp(.8,1.2,dets.clientY - yprev);
+  window.addEventListener("mousemove", function (dets) {
+    this.clearTimeout(timeout);
 
-        xprev = dets.clientX;
-        yprev = dets.clientY;
+    xscale = gsap.utils.clamp(0.8, 1.2, dets.clientX - xprev);
+    yscale = gsap.utils.clamp(0.8, 1.2, dets.clientY - yprev);
 
-        circleMouseFollower(xscale, yscale);
+    xprev = dets.clientX;
+    yprev = dets.clientY;
 
-        timeout = setTimeout(function () {
-            document.querySelector(
-              "#miniCircle"
-            ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(1, 1)`;
-          }, 100);
-    });
+    circleMouseFollower(xscale, yscale);
+
+    timeout = setTimeout(function () {
+      document.querySelector(
+        "#miniCircle"
+      ).style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(1, 1)`;
+    }, 100);
+  });
 }
 
 circleSkewness();
@@ -72,3 +71,34 @@ function circleMouseFollower(xscale, yscale) {
 
 circleMouseFollower();
 firstPageAnimation();
+
+// Select three elements, then apply a mouse move event to all three.
+//  When the mouse moves, determine its position (x and y coordinates). 
+//  Show an image at the mouse's position and move it accordingly. While moving, rotate the image,
+//   and the faster the mouse moves, the faster the rotation should be.
+
+document.querySelectorAll(".element").forEach(function (element) {
+  var rotate = 0;
+  var diffrot = 0;
+
+  element.addEventListener("mouseleave", function (event) {
+    gsap.to(element.querySelector("img"), {
+      opacity: 0,
+      ease: Power3,
+      duration: 0.5,
+    });
+  });
+
+  element.addEventListener("mousemove", function (event) {
+    var diff = event.clientY - element.getBoundingClientRect().top;
+    diffrot = event.clientX - rotate;
+    rotate = event.clientX;
+    gsap.to(element.querySelector("img"), {
+      opacity: 1,
+      ease: Power3,
+      top: diff,
+      left: event.clientX,
+      rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
+    });
+  });
+});
